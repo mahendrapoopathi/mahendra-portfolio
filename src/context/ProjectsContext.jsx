@@ -1,12 +1,14 @@
 import { useState, createContext } from 'react';
-import { projectsData } from '../data/projects';
+import projects from '../data/projects';
+
 
 // Create projects context
 export const ProjectsContext = createContext();
 
 // Create the projects context provider
 export const ProjectsProvider = (props) => {
-	const [projects, setProjects] = useState(projectsData);
+	const [projectsState, setProjects] = useState(projects);
+
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
 
